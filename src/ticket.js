@@ -1,21 +1,13 @@
-var request = require('request');
-
 var Ticket = function(config){
+  var zdrequest = require('./zdrequest.js')(config);
+
   return {
     list: function(){
-      console.log('Will list all tickets');
-      return new Promise(function(fufill, reject){
-        request('http://google.com', function (error, response, body) {
-          if (!error && response.statusCode == 200) {
-            fufill(body);
-          }
-          reject();
-        })
-      })
+      return zdrequest.get('/tickets.json')
     },
 
     show: function(id){
-      console.log('Will show ticket with id of', id);
+      return zdrequest.get('/tickets/' + id + '.json')
     },
 
     create: function(data){

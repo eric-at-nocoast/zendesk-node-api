@@ -1,11 +1,13 @@
 var User = function(config){
+  var zdrequest = require('./zdrequest.js')(config);
+
   return {
     list: function(){
-      console.log('Will list all users');
+      return zdrequest.get('/users.json')
     },
 
     show: function(id){
-      console.log('Will show user with id of', id);
+      return zdrequest.get('/users/' + id + '.json')
     },
 
     create: function(data){
