@@ -1,7 +1,17 @@
+var request = require('request');
+
 var Ticket = function(config){
   return {
     list: function(){
       console.log('Will list all tickets');
+      return new Promise(function(done, fail){
+        request('http://google.com', function (error, response, body) {
+          if (!error && response.statusCode == 200) {
+            done(body);
+          }
+          fail();
+        })
+      })
     },
 
     show: function(id){
