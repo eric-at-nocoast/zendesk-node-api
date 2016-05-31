@@ -13,7 +13,7 @@ var ZDRequest = function(config){
       return new Promise(function(fufill, reject){
         request(options, function(err, res, body){
           if (err) { reject(err); }
-          fufill(body);
+          fufill(JSON.parse(body));
         });
       })
     }
