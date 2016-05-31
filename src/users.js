@@ -5,7 +5,7 @@ var User = function(config){
     },
 
     show: function(id){
-      console.log('Will find Ticket with id of', id);
+      console.log('Will show Ticket with id of', id);
     },
 
     create: function(data){
