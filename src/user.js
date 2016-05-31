@@ -5,21 +5,21 @@ var User = function(config){
     },
 
     show: function(id){
-      console.log('Will show Ticket with id of', id);
+      console.log('Will show user with id of', id);
     },
 
     create: function(data){
-      var data = {ticket: data};
-      console.log('Will create ticket with body', data);
+      var data = {user: data};
+      console.log('Will create user with body', data);
     },
 
     update: function(id, data){
-      var data = {ticket: data}
-      console.log('Will update ticket with id', id, 'and body', data);
+      var data = {user: data}
+      console.log('Will update user with id', id, 'and body', data);
     },
 
     delete: function(id){
-      console.log('Will delete ticket with id', id);
+      console.log('Will delete user with id', id);
     }
   }
 }

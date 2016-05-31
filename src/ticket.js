@@ -5,7 +5,7 @@ var Ticket = function(config){
     },
 
     show: function(id){
-      console.log('Will show Ticket with id of', id);
+      console.log('Will show ticket with id of', id);
     },
 
     create: function(data){
