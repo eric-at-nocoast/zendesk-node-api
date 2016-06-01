@@ -15,8 +15,7 @@ var User = function(config){
     },
 
     update: function(id, data){
-      var data = {user: data}
-      console.log('Will update user with id', id, 'and body', data);
+      return zdrequest.put('/users/' + id + '.json', {user: data})
     },
 
     delete: function(id){

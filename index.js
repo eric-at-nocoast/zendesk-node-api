@@ -6,10 +6,8 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.tickets.update(190, {
-  comment: {
-    body: 'This is being updated with the api client'
-  }
+zendesk.users.update(2744920225, {
+  name: 'Node api test user'
 }).then(function(){
-  console.log('Ticket updated');
+  console.log('User updated');
 })
