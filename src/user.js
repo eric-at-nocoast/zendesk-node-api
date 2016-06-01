@@ -11,7 +11,7 @@ var User = function(config){
     },
 
     create: function(data){
-      return zdrequest.post('/users.json', {ticket: data})
+      return zdrequest.post('/users.json', {user: data})
     },
 
     update: function(id, data){

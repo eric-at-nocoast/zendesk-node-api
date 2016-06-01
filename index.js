@@ -6,11 +6,9 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.tickets.create({
-  subject: "Node api test ticket",
-  comment: {
-    body: "Body for my test ticket"
-  }
+zendesk.users.create({
+  name: 'Test guy',
+  email: 'testguy@adngdoijgao.com'
 }).then(function(){
-  console.log('Ticket created');
+  console.log('User created');
 })
