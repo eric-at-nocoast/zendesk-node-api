@@ -6,6 +6,6 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.users.delete(2814976665).then(function(){
-  console.log('User deleted');
+zendesk.tickets.list().then(function(tickets){
+  console.log(tickets);
 })

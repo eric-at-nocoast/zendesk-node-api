@@ -1,7 +1,7 @@
 {
   "name": "zendesk-node-api",
   "version": "1.0.0",
-  "description": "Zendesk API wrapper for Node JS",
+  "description": "Zendesk API client for NodeJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
