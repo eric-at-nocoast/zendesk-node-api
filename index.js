@@ -6,9 +6,10 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.users.create({
-  name: 'Test guy',
-  email: 'testguy@adngdoijgao.com'
+zendesk.tickets.update(190, {
+  comment: {
+    body: 'This is being updated with the api client'
+  }
 }).then(function(){
-  console.log('User created');
+  console.log('Ticket updated');
 })

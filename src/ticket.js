@@ -15,8 +15,7 @@ var Ticket = function(config){
     },
 
     update: function(id, data){
-      var data = {ticket: data}
-      console.log('Will update ticket with id', id, 'and body', data);
+      return zdrequest.put('/tickets/' + id + '.json', {ticket: data})
     },
 
     delete: function(id){

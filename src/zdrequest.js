@@ -33,6 +33,24 @@ var ZDRequest = function(config){
           fufill(JSON.parse(body));
         });
       })
+    },
+
+    put: function(uri, data){
+      var options = {
+        url: config.url + '/api/v2/' + uri,
+        method: 'PUT',
+        headers: {
+          Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
+        },
+        form: data
+      }
+
+      return new Promise(function(fufill, reject){
+        request(options, function(err, res, body){
+          if (err) { reject(err); }
+          fufill(JSON.parse(body));
+        });
+      })
     }
   }
 }
