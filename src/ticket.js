@@ -11,8 +11,7 @@ var Ticket = function(config){
     },
 
     create: function(data){
-      var data = {ticket: data};
-      console.log('Will create ticket with body', data);
+      return zdrequest.post('/tickets.json', {ticket: data})
     },
 
     update: function(id, data){

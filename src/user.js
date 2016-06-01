@@ -11,8 +11,7 @@ var User = function(config){
     },
 
     create: function(data){
-      var data = {user: data};
-      console.log('Will create user with body', data);
+      return zdrequest.post('/users.json', {ticket: data})
     },
 
     update: function(id, data){

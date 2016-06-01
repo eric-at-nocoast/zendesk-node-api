@@ -6,6 +6,11 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.tickets.list().then(function(tickets){
-  console.log(tickets);
+zendesk.tickets.create({
+  subject: "Node api test ticket",
+  comment: {
+    body: "Body for my test ticket"
+  }
+}).then(function(){
+  console.log('Ticket created');
 })
