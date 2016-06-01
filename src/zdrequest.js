@@ -51,6 +51,22 @@ var ZDRequest = function(config){
           fufill(JSON.parse(body));
         });
       })
+    },
+
+    delete: function(uri, data){
+      var options = {
+        url: config.url + '/api/v2/' + uri,
+        headers: {
+          Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
+        }
+      }
+
+      return new Promise(function(fufill, reject){
+        request.delete(options, function(err, res, body){
+          if (err) { reject(err); }
+          fufill();
+        });
+      })
     }
   }
 }

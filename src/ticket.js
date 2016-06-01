@@ -19,7 +19,7 @@ var Ticket = function(config){
     },
 
     delete: function(id){
-      console.log('Will delete ticket with id', id);
+      return zdrequest.delete('/tickets/' + id + '.json')
     }
   }
 }

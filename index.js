@@ -6,8 +6,6 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.users.update(2744920225, {
-  name: 'Node api test user'
-}).then(function(){
-  console.log('User updated');
+zendesk.tickets.delete(187).then(function(){
+  console.log('Ticket deleted');
 })
