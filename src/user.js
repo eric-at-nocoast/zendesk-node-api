@@ -19,7 +19,7 @@ var User = function(config){
     },
 
     delete: function(id){
-      console.log('Will delete user with id', id);
+      return zdrequest.delete('/users/' + id + '.json')
     }
   }
 }
