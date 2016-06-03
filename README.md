@@ -19,7 +19,7 @@ var zendesk = new Zendesk({
 These methods allow you to interact with tickets within Zendesk
 
 ### List tickets
-Returns a promise containing an object of all tickets in your Zendesk
+Returns a promise containing an array of all tickets in your Zendesk
 
 ```javascript
 zendesk.tickets.list().then(function(tickets){
@@ -76,7 +76,7 @@ zendesk.tickets.delete(TICKET_ID).then(function(){
 These methods allow you to interact with users within Zendesk
 
 ### List Users
-Returns a promise containing an object of all users in your Zendesk
+Returns a promise containing an array of all users in your Zendesk
 
 ```javascript
 zendesk.users.list().then(function(users){
