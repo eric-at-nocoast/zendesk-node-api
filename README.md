@@ -6,9 +6,9 @@ Create a new instance of Zendesk, passing in your Zendesk URL, email and API tok
 
 ```javascript
 var zendesk = new Zendesk({
-    url: [YOUR_ZENDESK_URL],
-    email: [YOUR_ZENDESK_EMAIL],
-    token: [YOUR_ZENDESK_API_TOKEN]
+    url: YOUR_ZENDESK_URL,
+    email: YOUR_ZENDESK_EMAIL,
+    token: YOUR_ZENDESK_API_TOKEN
 });
 ```
 
