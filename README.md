@@ -41,7 +41,7 @@ Create a ticket inside Zendesk
 
 ```javascript
 zendesk.tickets.create({
-  subject: 'A new ticket'
+  subject: 'A new ticket',
   comment: {
       body: 'A ticket created with zendesk-node-api'
   }
