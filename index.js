@@ -6,10 +6,7 @@ var zendesk = new Zendesk({
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
 
-zendesk.tickets.update(193, {
-  comment: {
-    body: 'Updated this ticket using the zendesk-node-api'
-  }
-}).then(function(){
-  console.log('Ticket updated');
-})
+zendesk.tickets.list().then(function(tickets){
+  // Do something with tickets2
+  console.log(tickets[3].url);
+});

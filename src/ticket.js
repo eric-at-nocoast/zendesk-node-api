@@ -1,9 +1,15 @@
 var Ticket = function(config){
-  var zdrequest = require('./zdrequest.js')(config);
+  var zdrequest = require('./zdrequest.js')(config)
 
   return {
     list: function(){
-      return zdrequest.get('/tickets.json')
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/tickets.json').then(function(data){
+          fufill(data.tickets)
+        }, function(){
+          reject()
+        })
+      })
     },
 
     show: function(id){
@@ -24,4 +30,4 @@ var Ticket = function(config){
   }
 }
 
-module.exports = Ticket;
+module.exports = Ticket
