@@ -19,7 +19,7 @@ var zendesk = new Zendesk({
 These methods allow you to interact with tickets within Zendesk
 
 ### List tickets
-Returns a promise containing a JSON object of all tickets in your Zendesk
+Returns a promise containing an object of all tickets in your Zendesk
 
 ```javascript
 zendesk.tickets.list().then(function(tickets){
