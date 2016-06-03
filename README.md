@@ -56,7 +56,7 @@ Update a ticket inside Zendesk
 ```javascript
 zendesk.tickets.update(TICKET_ID, {
   comment: {
-      body: 'Updated this ticket with zendesk-node-api'
+    body: 'Updated this ticket with zendesk-node-api'
   }
 }).then(function(){
   console.log('Ticket updated');
