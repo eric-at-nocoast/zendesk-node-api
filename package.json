@@ -1,12 +1,20 @@
 {
   "name": "zendesk-node-api",
   "version": "1.0.0",
-  "description": "Zendesk API client for NodeJS",
+  "description": "A wrapper library for Zendesk API using NodeJS",
+  "author": "Adam Gray adam@adamgray.so",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dashedstripes/zendesk-node-api"
   },
-  "author": "Adam Gray",
+  "bugs": {
+    "url": "https://github.com/dashedstripes/zendesk-node-api/issues"
+  },
+  "keywords": [
+    "zendesk",
+    "api"
+  ],
   "license": "ISC",
   "dependencies": {
     "request": "^2.72.0"
