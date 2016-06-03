@@ -28,7 +28,7 @@ zendesk.tickets.list().then(function(tickets){
 ```
 
 ### Show a ticket
-Returns a promise containing a JSON object of a specific ticket
+Returns a promise containing an object of a specific ticket
 
 ```javascript
 zendesk.tickets.show(TICKET_ID).then(function(ticket){
