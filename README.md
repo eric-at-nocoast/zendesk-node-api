@@ -68,3 +68,56 @@ zendesk.tickets.delete(TICKET_ID).then(function(){
   console.log('Ticket deleted');
 });
 ```
+
+## Users
+These methods allow you to interact with users within Zendesk
+
+### List Users
+Returns a promise containing a JSON object of all users in your Zendesk
+
+```javascript
+zendesk.users.list().then(function(users){
+  // Do something with users
+});
+```
+
+### Show a user
+Returns a promise containing a JSON object of a specific user
+
+```javascript
+zendesk.users.show(USER_ID).then(function(user){
+  // Do something with user
+});
+```
+
+### Create a user
+Create a user inside Zendesk
+
+```javascript
+zendesk.users.create({
+  name: 'API User',
+  email: 'user@zendesknodeapi.com'
+}).then(function(){
+  console.log('User created');
+});
+```
+
+### Update a user
+Update a user inside Zendesk
+
+```javascript
+zendesk.users.update(USER_ID, {
+  email: 'updatedemail@zendesknodeapi.com'
+}).then(function(){
+  console.log('User updated');
+});
+```
+
+### Delete a user
+Delete a user inside Zendesk
+
+```javascript
+zendesk.users.delete(USER_ID).then(function(){
+  console.log('User deleted');
+});
+```
