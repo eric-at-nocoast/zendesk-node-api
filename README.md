@@ -5,6 +5,12 @@ A wrapper library for Zendesk using NodeJS
 * [Users](https://github.com/dashedstripes/zendesk-node-api#users)
 
 ## Getting started
+Install the package via npm
+
+```bash
+$ npm install zendesk-node-api
+```
+
 Create a new instance of Zendesk, passing in your Zendesk URL, email and API token.
 
 ```javascript
