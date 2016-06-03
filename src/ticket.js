@@ -13,7 +13,13 @@ var Ticket = function(config){
     },
 
     show: function(id){
-      return zdrequest.get('/tickets/' + id + '.json')
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/tickets/' + id + '.json').then(function(data){
+          fufill(data.ticket)
+        }, function(){
+          reject()
+        })
+      })
     },
 
     create: function(data){
