@@ -5,8 +5,3 @@ var zendesk = new Zendesk({
   email: 'agray@zendesk.com',
   token: 'hyjCGMknQUmlvOWChLoitKZFUVdsnfSUBn4DnxPd'
 });
-
-zendesk.tickets.list().then(function(tickets){
-  // Do something with tickets2
-  console.log(tickets[3].url);
-});
