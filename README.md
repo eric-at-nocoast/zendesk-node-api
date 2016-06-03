@@ -1,6 +1,9 @@
 # Zendesk NodeJS API
 A wrapper library for Zendesk using NodeJS
 
+* [Tickets](https://github.com/dashedstripes/zendesk-node-api#tickets)
+* [Users](https://github.com/dashedstripes/zendesk-node-api#users)
+
 ## Getting started
 Create a new instance of Zendesk, passing in your Zendesk URL, email and API token.
 
