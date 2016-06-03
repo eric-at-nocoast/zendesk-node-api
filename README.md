@@ -76,7 +76,7 @@ zendesk.tickets.delete(TICKET_ID).then(function(){
 These methods allow you to interact with users within Zendesk
 
 ### List Users
-Returns a promise containing a JSON object of all users in your Zendesk
+Returns a promise containing an object of all users in your Zendesk
 
 ```javascript
 zendesk.users.list().then(function(users){
@@ -85,7 +85,7 @@ zendesk.users.list().then(function(users){
 ```
 
 ### Show a user
-Returns a promise containing a JSON object of a specific user
+Returns a promise containing an object of a specific user
 
 ```javascript
 zendesk.users.show(USER_ID).then(function(user){

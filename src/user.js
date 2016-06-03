@@ -3,11 +3,23 @@ var User = function(config){
 
   return {
     list: function(){
-      return zdrequest.get('/users.json')
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/users.json').then(function(data){
+          fufill(data.users)
+        }, function(){
+          reject()
+        })
+      })
     },
 
     show: function(id){
-      return zdrequest.get('/users/' + id + '.json')
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/users/' + id + '.json').then(function(data){
+          fufill(data.user)
+        }, function(){
+          reject()
+        })
+      })
     },
 
     create: function(data){
