@@ -6,9 +6,9 @@ Create a new instance of Zendesk, passing in your Zendesk URL, email and API tok
 
 ```javascript
 var zendesk = new Zendesk({
-    url: YOUR_ZENDESK_URL,
-    email: YOUR_ZENDESK_EMAIL,
-    token: YOUR_ZENDESK_API_TOKEN
+  url: YOUR_ZENDESK_URL,
+  email: YOUR_ZENDESK_EMAIL,
+  token: YOUR_ZENDESK_API_TOKEN
 });
 ```
 
@@ -20,7 +20,7 @@ Returns a promise containing a JSON object of all tickets in your Zendesk
 
 ```javascript
 zendesk.tickets.list().then(function(tickets){
-    // Do something with tickets
+  // Do something with tickets
 });
 ```
 
@@ -29,7 +29,7 @@ Returns a promise containing a JSON object of a specific ticket
 
 ```javascript
 zendesk.tickets.show(TICKET_ID).then(function(ticket){
-    // Do something with ticket
+  // Do something with ticket
 });
 ```
 
@@ -38,12 +38,12 @@ Create a ticket inside Zendesk
 
 ```javascript
 zendesk.tickets.create({
-    subject: 'A new ticket'
-    comment: {
-        body: 'A ticket created with zendesk-node-api'
-    }
+  subject: 'A new ticket'
+  comment: {
+      body: 'A ticket created with zendesk-node-api'
+  }
 }).then(function(){
-    console.log('Ticket created');
+  console.log('Ticket created');
 });
 ```
 
@@ -52,11 +52,11 @@ Update a ticket inside Zendesk
 
 ```javascript
 zendesk.tickets.update(TICKET_ID, {
-    comment: {
-        body: 'Updated this ticket with zendesk-node-api'
-    }
+  comment: {
+      body: 'Updated this ticket with zendesk-node-api'
+  }
 }).then(function(){
-    console.log('Ticket updated');
+  console.log('Ticket updated');
 });
 ```
 
@@ -65,6 +65,6 @@ Delete a ticket inside Zendesk
 
 ```javascript
 zendesk.tickets.delete(TICKET_ID).then(function(){
-    console.log('Ticket deleted');
+  console.log('Ticket deleted');
 });
 ```
