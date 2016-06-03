@@ -14,6 +14,8 @@ $ npm install zendesk-node-api
 Create a new instance of Zendesk, passing in your Zendesk URL, email and API token.
 
 ```javascript
+var Zendesk = require('zendesk-node-api');
+
 var zendesk = new Zendesk({
   url: YOUR_ZENDESK_URL, // https://example.zendesk.com
   email: YOUR_ZENDESK_EMAIL, // me@example.com
