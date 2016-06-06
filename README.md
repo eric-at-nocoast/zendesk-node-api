@@ -102,6 +102,18 @@ zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
 });
 ```
 
+### Create a ticket field
+Create a ticket field inside Zendesk
+
+```javascript
+zendesk.ticketFields.create({
+  type: 'text',
+  title: 'Title for the Ticket Field'
+}).then(function(){
+  console.log('Ticket field created!');
+});
+```
+
 ## Users
 These methods allow you to interact with users within Zendesk
 

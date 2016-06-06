@@ -21,6 +21,10 @@ var TicketFields = function(config){
         })
       })
     },
+
+    create: function(data){
+      return zdrequest.post('/ticket_fields.json', {ticket_field: data})
+    },
   }
 }
 
