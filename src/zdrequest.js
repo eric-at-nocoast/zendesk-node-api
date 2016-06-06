@@ -1,10 +1,11 @@
 var request = require('request');
+var API_VERSION = 'v2';
 
 var ZDRequest = function(config){
   return {
     get: function(uri){
       var options = {
-        url: config.url + '/api/v2/' + uri,
+        url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
         }
@@ -20,7 +21,7 @@ var ZDRequest = function(config){
 
     post: function(uri, data){
       var options = {
-        url: config.url + '/api/v2/' + uri,
+        url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
         },
@@ -37,7 +38,7 @@ var ZDRequest = function(config){
 
     put: function(uri, data){
       var options = {
-        url: config.url + '/api/v2/' + uri,
+        url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
         },
@@ -54,7 +55,7 @@ var ZDRequest = function(config){
 
     delete: function(uri, data){
       var options = {
-        url: config.url + '/api/v2/' + uri,
+        url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
         }
