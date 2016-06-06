@@ -4,6 +4,7 @@ A wrapper library for Zendesk using NodeJS
 * [Tickets](https://github.com/dashedstripes/zendesk-node-api#tickets)
 * [Ticket Fields](https://github.com/dashedstripes/zendesk-node-api#ticket-fields)
 * [Users](https://github.com/dashedstripes/zendesk-node-api#users)
+* [User Fields](https://github.com/dashedstripes/zendesk-node-api#user-fields)
 
 ## Getting started
 Install the package via npm
@@ -185,5 +186,59 @@ Delete a user inside Zendesk
 ```javascript
 zendesk.users.delete(USER_ID).then(function(){
   console.log('User deleted');
+});
+```
+
+## Ticket Fields
+These methods allow you to interact with ticket fields within Zendesk
+
+### List ticket fields
+Returns a promise containing an array of all ticket fields in your Zendesk
+
+```javascript
+zendesk.ticketFields.list().then(function(ticketFields){
+  // Do something with ticketFields
+});
+```
+
+### Show a ticket field
+Returns a promise containing an object of a specific ticket field
+
+```javascript
+zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
+  // Do something with ticketField
+});
+```
+
+### Create a user field
+Create a user field inside Zendesk
+
+```javascript
+zendesk.userFields.create({
+  type: 'text',
+  title: 'User field',
+  key: 'user_field'
+}).then(function(){
+  console.log('User field created!');
+});
+```
+
+### Update a user field
+Update a user field inside Zendesk
+
+```javascript
+zendesk.userFields.update(USER_FIELD_ID, {
+  title: 'Updated User field title',
+}).then(function(){
+  console.log('User field updated!');
+});
+```
+
+### Delete a user field
+Delete a user field inside Zendesk
+
+```javascript
+zendesk.userFields.delete(USER_FIELD_ID).then(function(){
+  console.log('User field deleted');
 });
 ```
