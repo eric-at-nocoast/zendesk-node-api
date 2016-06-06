@@ -1,8 +1,8 @@
 # Zendesk NodeJS API
 A wrapper library for Zendesk using NodeJS
 
-* [Tickets](https://github.com/dashedstripes/zendesk-node-api#tickets)
-* [Ticket Fields](https://github.com/dashedstripes/zendesk-node-api#ticket-fields)
+* [users](https://github.com/dashedstripes/zendesk-node-api#users)
+* [user Fields](https://github.com/dashedstripes/zendesk-node-api#user-fields)
 * [Users](https://github.com/dashedstripes/zendesk-node-api#users)
 * [User Fields](https://github.com/dashedstripes/zendesk-node-api#user-fields)
 
@@ -25,114 +25,114 @@ var zendesk = new Zendesk({
 });
 ```
 
-## Tickets
-These methods allow you to interact with tickets within Zendesk
+## users
+These methods allow you to interact with users within Zendesk
 
-### List tickets
-Returns a promise containing an array of all tickets in your Zendesk
+### List users
+Returns a promise containing an array of all users in your Zendesk
 
 ```javascript
-zendesk.tickets.list().then(function(tickets){
-  // Do something with tickets
+zendesk.users.list().then(function(users){
+  // Do something with users
 });
 ```
 
-### Show a ticket
-Returns a promise containing an object of a specific ticket
+### Show a user
+Returns a promise containing an object of a specific user
 
 ```javascript
-zendesk.tickets.show(TICKET_ID).then(function(ticket){
-  // Do something with ticket
+zendesk.users.show(user_ID).then(function(user){
+  // Do something with user
 });
 ```
 
-### Create a ticket
-Create a ticket inside Zendesk
+### Create a user
+Create a user inside Zendesk
 
 ```javascript
-zendesk.tickets.create({
-  subject: 'A new ticket',
+zendesk.users.create({
+  subject: 'A new user',
   comment: {
-      body: 'A ticket created with zendesk-node-api'
+      body: 'A user created with zendesk-node-api'
   }
 }).then(function(){
-  console.log('Ticket created');
+  console.log('user created');
 });
 ```
 
-### Update a ticket
-Update a ticket inside Zendesk
+### Update a user
+Update a user inside Zendesk
 
 ```javascript
-zendesk.tickets.update(TICKET_ID, {
+zendesk.users.update(user_ID, {
   comment: {
-    body: 'Updated this ticket with zendesk-node-api'
+    body: 'Updated this user with zendesk-node-api'
   }
 }).then(function(){
-  console.log('Ticket updated');
+  console.log('user updated');
 });
 ```
 
-### Delete a ticket
-Delete a ticket inside Zendesk
+### Delete a user
+Delete a user inside Zendesk
 
 ```javascript
-zendesk.tickets.delete(TICKET_ID).then(function(){
-  console.log('Ticket deleted');
+zendesk.users.delete(user_ID).then(function(){
+  console.log('user deleted');
 });
 ```
 
-## Ticket Fields
-These methods allow you to interact with ticket fields within Zendesk
+## user Fields
+These methods allow you to interact with user fields within Zendesk
 
-### List ticket fields
-Returns a promise containing an array of all ticket fields in your Zendesk
+### List user fields
+Returns a promise containing an array of all user fields in your Zendesk
 
 ```javascript
-zendesk.ticketFields.list().then(function(ticketFields){
-  // Do something with ticketFields
+zendesk.userFields.list().then(function(userFields){
+  // Do something with userFields
 });
 ```
 
-### Show a ticket field
-Returns a promise containing an object of a specific ticket field
+### Show a user field
+Returns a promise containing an object of a specific user field
 
 ```javascript
-zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
-  // Do something with ticketField
+zendesk.userFields.show(user_FIELD_ID).then(function(userField){
+  // Do something with userField
 });
 ```
 
-### Create a ticket field
-Create a ticket field inside Zendesk
+### Create a user field
+Create a user field inside Zendesk
 
 ```javascript
-zendesk.ticketFields.create({
+zendesk.userFields.create({
   type: 'text',
-  title: 'Title for the Ticket Field'
+  title: 'Title for the user Field'
 }).then(function(){
-  console.log('Ticket field created!');
+  console.log('user field created!');
 });
 ```
 
-### Update a ticket field
-Update a ticket field inside Zendesk
+### Update a user field
+Update a user field inside Zendesk
 
 ```javascript
-zendesk.ticketFields.update(TICKET_FIELD_ID, {
+zendesk.userFields.update(user_FIELD_ID, {
   type: 'text',
-  title: 'Updated Ticket Field Title'
+  title: 'Updated user Field Title'
 }).then(function(){
-  console.log('Ticket field updated!');
+  console.log('user field updated!');
 });
 ```
 
-### Delete a ticket field
-Delete a ticket field inside Zendesk
+### Delete a user field
+Delete a user field inside Zendesk
 
 ```javascript
-zendesk.ticketFields.delete(TICKET_FIELD_ID).then(function(){
-  console.log('Ticket field deleted');
+zendesk.userFields.delete(user_FIELD_ID).then(function(){
+  console.log('user field deleted');
 });
 ```
 
@@ -189,24 +189,24 @@ zendesk.users.delete(USER_ID).then(function(){
 });
 ```
 
-## Ticket Fields
-These methods allow you to interact with ticket fields within Zendesk
+## User Fields
+These methods allow you to interact with user fields within Zendesk
 
-### List ticket fields
-Returns a promise containing an array of all ticket fields in your Zendesk
+### List user fields
+Returns a promise containing an array of all user fields in your Zendesk
 
 ```javascript
-zendesk.ticketFields.list().then(function(ticketFields){
-  // Do something with ticketFields
+zendesk.userFields.list().then(function(userFields){
+  // Do something with userFields
 });
 ```
 
-### Show a ticket field
-Returns a promise containing an object of a specific ticket field
+### Show a user field
+Returns a promise containing an object of a specific user field
 
 ```javascript
-zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
-  // Do something with ticketField
+zendesk.userFields.show(USER_FIELD_ID).then(function(userField){
+  // Do something with userField
 });
 ```
 
