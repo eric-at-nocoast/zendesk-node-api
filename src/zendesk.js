@@ -1,9 +1,9 @@
 function Zendesk(config){
   return {
-    tickets: require('./ticket.js')(config),
-    ticketFields: require('./ticketfields.js')(config),
-    users: require('./user.js')(config),
-    userFields: require('./userfields.js')(config)
+    tickets: require('./accessor.js')(config, 'ticket', 'tickets'),
+    ticketFields: require('./accessor.js')(config, 'ticket_field', 'ticket_fields'),
+    users: require('./accessor.js')(config, 'user', 'users'),
+    userFields:require('./accessor.js')(config, 'user_field', 'user_fields'),
   };
 }
 
