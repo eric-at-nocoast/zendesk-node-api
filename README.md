@@ -80,6 +80,27 @@ zendesk.tickets.delete(TICKET_ID).then(function(){
 });
 ```
 
+## Ticket Fields
+These methods allow you to interact with ticket fields within Zendesk
+
+### List ticket fields
+Returns a promise containing an array of all ticket fields in your Zendesk
+
+```javascript
+zendesk.ticketFields.list().then(function(ticketFields){
+  // Do something with ticketFields
+});
+```
+
+### Show a ticket field
+Returns a promise containing an object of a specific ticket field
+
+```javascript
+zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticket_field){
+  // Do something with ticketField
+});
+```
+
 ## Users
 These methods allow you to interact with users within Zendesk
 
