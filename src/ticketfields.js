@@ -10,7 +10,17 @@ var TicketFields = function(config){
           reject()
         })
       })
-    }
+    },
+
+    show: function(id){
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/ticket_fields/' + id + '.json').then(function(data){
+          fufill(data.ticket_field)
+        }, function(){
+          reject()
+        })
+      })
+    },
   }
 }
 

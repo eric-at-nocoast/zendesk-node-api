@@ -96,7 +96,7 @@ zendesk.ticketFields.list().then(function(ticketFields){
 Returns a promise containing an object of a specific ticket field
 
 ```javascript
-zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticket_field){
+zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
   // Do something with ticketField
 });
 ```
