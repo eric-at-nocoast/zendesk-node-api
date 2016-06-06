@@ -168,6 +168,8 @@ zendesk.users.show(USER_ID).then(function(user){
 ### Create a user
 Create a user inside Zendesk
 
+https://developer.zendesk.com/rest_api/docs/core/users#create-user
+
 ```javascript
 zendesk.users.create({
   name: 'API User',
@@ -179,6 +181,8 @@ zendesk.users.create({
 
 ### Update a user
 Update a user inside Zendesk
+
+https://developer.zendesk.com/rest_api/docs/core/users#update-user
 
 ```javascript
 zendesk.users.update(USER_ID, {
