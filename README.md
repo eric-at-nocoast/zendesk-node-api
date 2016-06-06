@@ -110,6 +110,8 @@ zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
 ### Create a ticket field
 Create a ticket field inside Zendesk
 
+https://developer.zendesk.com/rest_api/docs/core/ticket_fields#create-ticket-fields
+
 ```javascript
 zendesk.ticketFields.create({
   type: 'text',
@@ -121,6 +123,8 @@ zendesk.ticketFields.create({
 
 ### Update a ticket field
 Update a ticket field inside Zendesk
+
+https://developer.zendesk.com/rest_api/docs/core/ticket_fields#update-ticket-fields
 
 ```javascript
 zendesk.ticketFields.update(TICKET_FIELD_ID, {
