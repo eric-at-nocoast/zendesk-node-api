@@ -2,6 +2,7 @@
 A wrapper library for Zendesk using NodeJS
 
 * [Tickets](https://github.com/dashedstripes/zendesk-node-api#tickets)
+* [Ticket Fields](https://github.com/dashedstripes/zendesk-node-api#ticket-fields)
 * [Users](https://github.com/dashedstripes/zendesk-node-api#users)
 
 ## Getting started
