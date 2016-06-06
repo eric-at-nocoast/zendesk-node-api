@@ -114,6 +114,27 @@ zendesk.ticketFields.create({
 });
 ```
 
+### Update a ticket field
+Update a ticket field inside Zendesk
+
+```javascript
+zendesk.ticketFields.update(TICKET_FIELD_ID, {
+  type: 'text',
+  title: 'Updated Ticket Field Title'
+}).then(function(){
+  console.log('Ticket field updated!');
+});
+```
+
+### Delete a ticket field
+Delete a ticket field inside Zendesk
+
+```javascript
+zendesk.ticketFields.delete(TICKET_FIELD_ID).then(function(){
+  console.log('Ticket field deleted');
+});
+```
+
 ## Users
 These methods allow you to interact with users within Zendesk
 

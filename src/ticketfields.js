@@ -25,6 +25,14 @@ var TicketFields = function(config){
     create: function(data){
       return zdrequest.post('/ticket_fields.json', {ticket_field: data})
     },
+
+    update: function(id, data){
+      return zdrequest.put('/ticket_fields/' + id + '.json', {ticket_field: data})
+    },
+
+    delete: function(id){
+      return zdrequest.delete('/ticket_fields/' + id + '.json')
+    }
   }
 }
 
