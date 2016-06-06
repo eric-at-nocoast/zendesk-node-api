@@ -225,6 +225,8 @@ zendesk.userFields.show(USER_FIELD_ID).then(function(userField){
 ### Create a user field
 Create a user field inside Zendesk
 
+https://developer.zendesk.com/rest_api/docs/core/user_fields#create-user-fields
+
 ```javascript
 zendesk.userFields.create({
   type: 'text',
@@ -237,6 +239,8 @@ zendesk.userFields.create({
 
 ### Update a user field
 Update a user field inside Zendesk
+
+https://developer.zendesk.com/rest_api/docs/core/user_fields#update-user-fields
 
 ```javascript
 zendesk.userFields.update(USER_FIELD_ID, {
