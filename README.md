@@ -49,7 +49,7 @@ zendesk.tickets.show(TICKET_ID).then(function(ticket){
 ### Create a ticket
 Create a ticket inside Zendesk
 
-A full list of available parameters can be found [here](https://developer.zendesk.com/rest_api/docs/core/tickets#create-ticket)
+https://developer.zendesk.com/rest_api/docs/core/tickets#create-ticket
 
 ```javascript
 zendesk.tickets.create({
@@ -65,7 +65,7 @@ zendesk.tickets.create({
 ### Update a ticket
 Update a ticket inside Zendesk
 
-A full list of available parameters can be found [here](https://developer.zendesk.com/rest_api/docs/core/tickets#update-ticket)
+https://developer.zendesk.com/rest_api/docs/core/tickets#update-ticket
 
 ```javascript
 zendesk.tickets.update(TICKET_ID, {
