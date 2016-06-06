@@ -49,11 +49,13 @@ zendesk.tickets.show(TICKET_ID).then(function(ticket){
 ### Create a ticket
 Create a ticket inside Zendesk
 
+A full list of available parameters can be found [here](https://developer.zendesk.com/rest_api/docs/core/tickets#create-ticket)
+
 ```javascript
 zendesk.tickets.create({
   subject: 'A new ticket',
   comment: {
-      body: 'A ticket created with zendesk-node-api'
+    body: 'A ticket created with zendesk-node-api'
   }
 }).then(function(){
   console.log('Ticket created');
@@ -62,6 +64,8 @@ zendesk.tickets.create({
 
 ### Update a ticket
 Update a ticket inside Zendesk
+
+A full list of available parameters can be found [here](https://developer.zendesk.com/rest_api/docs/core/tickets#update-ticket)
 
 ```javascript
 zendesk.tickets.update(TICKET_ID, {
