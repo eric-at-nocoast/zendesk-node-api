@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dashedstripes/zendesk-node-api.svg?branch=master)](https://travis-ci.org/dashedstripes/zendesk-node-api)
+
 # Zendesk NodeJS API
 A wrapper library for Zendesk using NodeJS
 
