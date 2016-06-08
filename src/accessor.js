@@ -1,3 +1,5 @@
+var Promise = require('promise');
+
 var Accessor = function(config, single, plural){
   var zdrequest = require('./zdrequest.js')(config)
 

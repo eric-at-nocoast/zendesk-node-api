@@ -20,6 +20,7 @@
   ],
   "license": "ISC",
   "dependencies": {
+    "promise": "^7.1.1",
     "request": "^2.72.0"
   },
   "devDependencies": {
