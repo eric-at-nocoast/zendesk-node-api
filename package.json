@@ -4,6 +4,9 @@
   "description": "A wrapper library for Zendesk API using NodeJS",
   "author": "Adam Gray adam@adamgray.so",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dashedstripes/zendesk-node-api"
