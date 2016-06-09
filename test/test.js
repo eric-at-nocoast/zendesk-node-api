@@ -13,7 +13,7 @@ describe('Zendesk', function(){
     require('./models/ticket.js')(zendesk);
   });
 
-  describe('ticket fields', function(){
-    require('./models/ticketfields.js')(zendesk);
-  });
+  // describe('ticket fields', function(){
+  //   require('./models/ticketfields.js')(zendesk);
+  // });
 });

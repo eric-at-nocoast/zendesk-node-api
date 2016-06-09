@@ -32,11 +32,12 @@ module.exports = function(zendesk){
   });
 
   it('should update a ticket', function(done){
+    var testString = Math.random().toString(36).substring(7)
     zendesk.tickets.update(TICKET_ID, {
-      subject: 'Updated ticket'
+      subject: testString
     }).then(function(data){
       expect(data).to.exist;
-      expect(data.ticket.subject).to.equal('Updated ticket');
+      expect(data.ticket.subject).to.equal(testString);
       done();
     });
   });
@@ -50,6 +51,7 @@ module.exports = function(zendesk){
       }
     }).then(function(data){
       zendesk.tickets.delete(data.ticket.id).then(function(result){
+        expect(result).to.be.true;
         done();
       });
     });

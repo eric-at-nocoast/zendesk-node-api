@@ -8,8 +8,8 @@ var Accessor = function(config, single, plural){
       return new Promise(function(fufill, reject){
         zdrequest.get('/' + plural + '.json').then(function(data){
           fufill(data[plural])
-        }, function(){
-          reject()
+        }, function(err){
+          reject(err)
         })
       })
     },
@@ -18,26 +18,44 @@ var Accessor = function(config, single, plural){
       return new Promise(function(fufill, reject){
         zdrequest.get('/' + plural + '/' + id + '.json').then(function(data){
           fufill(data[single])
-        }, function(){
-          reject()
+        }, function(err){
+          reject(err)
         })
       })
     },
 
     create: function(data){
       var createData = {}
-      createData[single] = data;
-      return zdrequest.post('/' + plural + '.json', createData)
+      createData[single] = data
+      return new Promise(function(fufill, reject){
+        zdrequest.post('/' + plural + '.json', createData).then(function(data){
+          fufill(data)
+        }, function(err){
+          reject(err)
+        })
+      })
     },
 
     update: function(id, data){
       var createData = {}
       createData[single] = data;
-      return zdrequest.put('/' + plural + '/' + id + '.json', createData)
+      return new Promise(function(fufill, reject){
+        zdrequest.put('/' + plural + '/' + id + '.json', createData).then(function(data){
+          fufill(data)
+        }, function(err){
+          reject(err)
+        })
+      })
     },
 
     delete: function(id){
-      return zdrequest.delete('/' + plural + '/' + id + '.json')
+      return new Promise(function(fufill, reject){
+        zdrequest.delete('/' + plural + '/' + id + '.json').then(function(){
+          fufill(true)
+        }, function(err){
+          reject(err)
+        })
+      })
     }
   }
 }
