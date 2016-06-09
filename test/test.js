@@ -48,5 +48,18 @@ describe('Zendesk', function(){
         done();
       });
     });
+
+    it('should delete a ticket', function(done){
+      zendesk.tickets.create({
+        subject: 'This will be deleted',
+        comment: {
+          body: 'A ticket that will be deleted'
+        }
+      }).then(function(data){
+        zendesk.tickets.delete(data.ticket.id).then(function(result){
+          done();
+        });
+      });
+    });
   });
 });
