@@ -50,6 +50,7 @@ describe('Zendesk', function(){
     });
 
     it('should delete a ticket', function(done){
+      this.timeout(10000);
       zendesk.tickets.create({
         subject: 'This will be deleted',
         comment: {
