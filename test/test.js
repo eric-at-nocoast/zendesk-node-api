@@ -9,11 +9,11 @@ var zendesk = new Zendesk({
 });
 
 describe('Zendesk', function(){
+  describe('ticket fields', function(){
+    require('./models/ticketfields.js')(zendesk);
+  });
+
   describe('tickets', function(){
     require('./models/ticket.js')(zendesk);
   });
-
-  // describe('ticket fields', function(){
-  //   require('./models/ticketfields.js')(zendesk);
-  // });
 });

@@ -2,7 +2,7 @@ var should = require('chai').should();
 var expect = require('chai').expect;
 
 module.exports = function(zendesk){
-  var TICKET_FIELD_ID = 26197019;
+  var TICKET_FIELD_ID = 27368485;
 
   it('should get all ticket fields', function(done){
     zendesk.ticketFields.list().then(function(ticketFields){
@@ -22,28 +22,33 @@ module.exports = function(zendesk){
     zendesk.ticketFields.create({
       type: 'text',
       title: 'Test ticket field for zendesk-node-api'
-    }).then(function(){
+    }).then(function(data){
+      expect(data).to.exist;
+      expect(data.ticket_field.title).to.equal('Test ticket field for zendesk-node-api');
       done();
     });
   });
 
   it('should update a ticket field', function(done){
+    var testString = Math.random().toString(36).substring(7);
     zendesk.ticketFields.update(TICKET_FIELD_ID, {
-      type: 'text',
-      title: 'Updated Ticket Field Title'
-    }).then(function(){
+      description: testString
+    }).then(function(data){
+      expect(data).to.exist;
+      expect(data.ticket_field.description).to.equal(testString);
       done();
     });
   });
 
-  it('should delete a ticket', function(done){
-    zendesk.ticketFields.create({
-      type: 'text',
-      title: 'Test ticket field for zendesk-node-api'
-    }).then(function(data){
-      zendesk.ticketFields.delete(data.ticket_field.id).then(function(result){
-        done();
-      });
-    });
-  });
+  //
+  // it('should delete a ticket', function(done){
+  //   zendesk.ticketFields.create({
+  //     type: 'text',
+  //     title: 'Test ticket field for zendesk-node-api'
+  //   }).then(function(data){
+  //     zendesk.ticketFields.delete(data.ticket_field.id).then(function(result){
+  //       done();
+  //     });
+  //   });
+  // });
 }
