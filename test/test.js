@@ -12,4 +12,8 @@ describe('Zendesk', function(){
   describe('tickets', function(){
     require('./models/ticket.js')(zendesk);
   });
+
+  describe('ticket fields', function(){
+    require('./models/ticketfields.js')(zendesk);
+  });
 });
