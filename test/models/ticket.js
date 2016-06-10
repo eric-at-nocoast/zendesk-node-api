@@ -5,6 +5,7 @@ module.exports = function(zendesk){
   var TICKET_ID = 212;
 
   it('should get all tickets', function(done){
+    this.timeout(5000);
     zendesk.tickets.list().then(function(tickets){
       expect(tickets).to.exist;
       done();
@@ -38,6 +39,7 @@ module.exports = function(zendesk){
   });
 
   it('should update a ticket', function(done){
+    this.timeout(5000);
     var testString = Math.random().toString(36).substring(7)
     zendesk.tickets.update(TICKET_ID, {
       subject: testString

@@ -23,6 +23,7 @@ module.exports = function(zendesk){
   });
 
   it('should create a ticket field', function(done){
+    this.timeout(5000);
     zendesk.ticketFields.create({
       type: 'text',
       title: 'Test ticket field for zendesk-node-api'
@@ -36,6 +37,7 @@ module.exports = function(zendesk){
   });
 
   it('should update a ticket field', function(done){
+    this.timeout(5000);
     var testString = Math.random().toString(36).substring(7);
     zendesk.ticketFields.update(TICKET_FIELD_ID, {
       description: testString
