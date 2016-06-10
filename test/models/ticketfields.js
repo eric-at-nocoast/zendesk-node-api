@@ -52,15 +52,19 @@ module.exports = function(zendesk){
     });
   });
 
-  //
-  // it('should delete a ticket', function(done){
-  //   zendesk.ticketFields.create({
-  //     type: 'text',
-  //     title: 'Test ticket field for zendesk-node-api'
-  //   }).then(function(data){
-  //     zendesk.ticketFields.delete(data.ticket_field.id).then(function(result){
-  //       done();
-  //     });
-  //   });
-  // });
+
+  it('should delete a ticket field', function(done){
+    this.timeout(20000);
+    zendesk.ticketFields.create({
+      type: 'text',
+      title: 'Test ticket field to be deleted'
+    }).then(function(data){
+      zendesk.ticketFields.delete(data.ticket_field.id).then(function(result){
+        expect(result).to.be.true;
+        done();
+      });
+    }).catch(function(err){
+      done(err);
+    });;
+  });
 }
