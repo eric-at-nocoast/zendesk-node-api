@@ -8,6 +8,8 @@ module.exports = function(zendesk){
     zendesk.ticketFields.list().then(function(ticketFields){
       expect(ticketFields).to.exist;
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -15,6 +17,8 @@ module.exports = function(zendesk){
     zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
       expect(ticketField).to.exist;
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -26,6 +30,8 @@ module.exports = function(zendesk){
       expect(data).to.exist;
       expect(data.ticket_field.title).to.equal('Test ticket field for zendesk-node-api');
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -37,6 +43,8 @@ module.exports = function(zendesk){
       expect(data).to.exist;
       expect(data.ticket_field.description).to.equal(testString);
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 

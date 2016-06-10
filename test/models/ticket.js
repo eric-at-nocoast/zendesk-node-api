@@ -8,6 +8,8 @@ module.exports = function(zendesk){
     zendesk.tickets.list().then(function(tickets){
       expect(tickets).to.exist;
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -15,6 +17,8 @@ module.exports = function(zendesk){
     zendesk.tickets.show(TICKET_ID).then(function(ticket){
       expect(ticket).to.exist;
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -28,6 +32,8 @@ module.exports = function(zendesk){
       expect(data).to.exist;
       expect(data.ticket.subject).to.equal('A new ticket');
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -39,6 +45,8 @@ module.exports = function(zendesk){
       expect(data).to.exist;
       expect(data.ticket.subject).to.equal(testString);
       done();
+    }).catch(function(err){
+      done(err);
     });
   });
 
@@ -54,6 +62,8 @@ module.exports = function(zendesk){
         expect(result).to.be.true;
         done();
       });
+    }).catch(function(err){
+      done(err);
     });
   });
 }
