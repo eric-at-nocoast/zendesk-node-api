@@ -24,6 +24,7 @@ module.exports = function(zendesk){
   });
 
   it('should create a user', function(done){
+    this.timeout(5000);
     var testString = Math.random().toString(36).substring(7)
     var testEmail = testString + '@zendesknodeapi.com';
     zendesk.users.create({
