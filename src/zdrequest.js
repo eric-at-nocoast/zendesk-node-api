@@ -8,7 +8,8 @@ var ZDRequest = function(config){
         url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
-        }
+        },
+        forever: true
       }
 
       return new Promise(function(fufill, reject){
