@@ -5,7 +5,7 @@ module.exports = function(zendesk){
   var USER_ID = 2963085349;
 
   it('should get all users', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     zendesk.users.list().then(function(users){
       expect(users).to.exist;
       done();
@@ -15,6 +15,7 @@ module.exports = function(zendesk){
   });
 
   it('should show a user by id', function(done){
+    this.timeout(20000);
     zendesk.users.show(USER_ID).then(function(user){
       expect(user).to.exist;
       done();
@@ -24,7 +25,7 @@ module.exports = function(zendesk){
   });
 
   it('should create a user', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     var testString = Math.random().toString(36).substring(7)
     var testEmail = testString + '@zendesknodeapi.com';
     zendesk.users.create({
@@ -40,7 +41,7 @@ module.exports = function(zendesk){
   });
 
   it('should update a user', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     var testString = Math.random().toString(36).substring(7)
     zendesk.users.update(USER_ID, {
       name: testString
@@ -54,7 +55,7 @@ module.exports = function(zendesk){
   });
 
   it('should delete a user', function(done){
-    this.timeout(10000);
+    this.timeout(20000);
     var testString = Math.random().toString(36).substring(7)
     var testEmail = testString + '@zendesknodeapi.com';
     zendesk.users.create({

@@ -5,6 +5,7 @@ module.exports = function(zendesk){
   var TICKET_FIELD_ID = 27368485;
 
   it('should get all ticket fields', function(done){
+    this.timeout(20000);
     zendesk.ticketFields.list().then(function(ticketFields){
       expect(ticketFields).to.exist;
       done();
@@ -14,6 +15,7 @@ module.exports = function(zendesk){
   });
 
   it('should show a ticket field by id', function(done){
+    this.timeout(20000);
     zendesk.ticketFields.show(TICKET_FIELD_ID).then(function(ticketField){
       expect(ticketField).to.exist;
       done();
@@ -23,7 +25,7 @@ module.exports = function(zendesk){
   });
 
   it('should create a ticket field', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     zendesk.ticketFields.create({
       type: 'text',
       title: 'Test ticket field for zendesk-node-api'
@@ -37,7 +39,7 @@ module.exports = function(zendesk){
   });
 
   it('should update a ticket field', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     var testString = Math.random().toString(36).substring(7);
     zendesk.ticketFields.update(TICKET_FIELD_ID, {
       description: testString

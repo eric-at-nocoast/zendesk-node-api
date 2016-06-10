@@ -5,7 +5,7 @@ module.exports = function(zendesk){
   var TICKET_ID = 212;
 
   it('should get all tickets', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     zendesk.tickets.list().then(function(tickets){
       expect(tickets).to.exist;
       done();
@@ -15,6 +15,7 @@ module.exports = function(zendesk){
   });
 
   it('should show a ticket by id', function(done){
+    this.timeout(20000);
     zendesk.tickets.show(TICKET_ID).then(function(ticket){
       expect(ticket).to.exist;
       done();
@@ -24,6 +25,7 @@ module.exports = function(zendesk){
   });
 
   it('should create a ticket', function(done){
+    this.timeout(20000);
     zendesk.tickets.create({
       subject: 'A new ticket',
       comment: {
@@ -39,7 +41,7 @@ module.exports = function(zendesk){
   });
 
   it('should update a ticket', function(done){
-    this.timeout(5000);
+    this.timeout(20000);
     var testString = Math.random().toString(36).substring(7)
     zendesk.tickets.update(TICKET_ID, {
       subject: testString
@@ -53,7 +55,7 @@ module.exports = function(zendesk){
   });
 
   it('should delete a ticket', function(done){
-    this.timeout(10000);
+    this.timeout(20000);
     zendesk.tickets.create({
       subject: 'This will be deleted',
       comment: {
