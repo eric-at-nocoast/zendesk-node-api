@@ -10,10 +10,14 @@ var zendesk = new Zendesk({
 
 describe('Zendesk', function(){
   describe('tickets', function(){
-    require('./models/ticket.js')(zendesk);
+    require('./models/tickets.js')(zendesk);
   });
 
   describe('ticket fields', function(){
     require('./models/ticketfields.js')(zendesk);
+  });
+
+  describe('users', function(){
+    require('./models/users.js')(zendesk);
   });
 });
