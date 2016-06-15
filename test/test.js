@@ -20,4 +20,8 @@ describe('Zendesk', function(){
   describe('users', function(){
     require('./models/users.js')(zendesk);
   });
+
+  describe('user fields', function(){
+    require('./models/userfields.js')(zendesk);
+  });
 });

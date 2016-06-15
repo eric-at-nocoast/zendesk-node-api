@@ -3,7 +3,7 @@ function Zendesk(config){
     tickets: require('./accessor.js')(config, 'ticket', 'tickets'),
     ticketFields: require('./accessor.js')(config, 'ticket_field', 'ticket_fields'),
     users: require('./accessor.js')(config, 'user', 'users'),
-    userFields:require('./accessor.js')(config, 'user_field', 'user_fields'),
+    userFields: require('./accessor.js')(config, 'user_field', 'user_fields'),
   };
 }
 
