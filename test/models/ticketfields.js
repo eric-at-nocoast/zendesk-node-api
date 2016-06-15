@@ -2,7 +2,7 @@ var should = require('chai').should();
 var expect = require('chai').expect;
 
 module.exports = function(zendesk){
-  var TICKET_FIELD_ID = 27368485;
+  var TICKET_FIELD_ID = require('./config.js').TICKET_FIELD_ID;
 
   it('should get all ticket fields', function(done){
     this.timeout(20000);

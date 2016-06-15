@@ -2,7 +2,7 @@ var should = require('chai').should();
 var expect = require('chai').expect;
 
 module.exports = function(zendesk){
-  var USER_ID = 2963085349;
+  var USER_ID = require('./config.js').USER_ID;
 
   it('should get all users', function(done){
     this.timeout(20000);

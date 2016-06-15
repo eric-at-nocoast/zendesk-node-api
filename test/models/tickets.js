@@ -2,7 +2,7 @@ var should = require('chai').should();
 var expect = require('chai').expect;
 
 module.exports = function(zendesk){
-  var TICKET_ID = 212;
+  var TICKET_ID = require('./config.js').TICKET_ID;
 
   it('should get all tickets', function(done){
     this.timeout(20000);
