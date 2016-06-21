@@ -26,13 +26,12 @@ var ZDRequest = function(config){
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
         },
-        form: data
+        json: data
       }
-
       return new Promise(function(fufill, reject){
         request.post(options, function(err, res, body){
           if (err) { reject(err); }
-          fufill(JSON.parse(body));
+          fufill(body);
         });
       })
     },
@@ -43,13 +42,13 @@ var ZDRequest = function(config){
         headers: {
           Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
         },
-        form: data
+        json: data
       }
 
       return new Promise(function(fufill, reject){
         request.put(options, function(err, res, body){
           if (err) { reject(err); }
-          fufill(JSON.parse(body));
+          fufill(body);
         });
       })
     },

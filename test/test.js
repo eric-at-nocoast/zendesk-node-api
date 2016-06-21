@@ -24,4 +24,8 @@ describe('Zendesk', function(){
   describe('user fields', function(){
     require('./models/userfields.js')(zendesk);
   });
+
+  describe('macros', function(){
+    require('./models/macros.js')(zendesk);
+  });
 });

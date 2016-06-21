@@ -2,7 +2,8 @@ var config = {
   TICKET_ID: 212,
   TICKET_FIELD_ID: 27368485,
   USER_ID: 2963085349,
-  USER_FIELD_ID: 312669
+  USER_FIELD_ID: 312669,
+  MACRO_ID: 61087669
 }
 
 module.exports = config;
