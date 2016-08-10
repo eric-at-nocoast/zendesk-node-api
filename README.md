@@ -29,6 +29,8 @@ var zendesk = new Zendesk({
 - ```userFields```
 - ```macros```
 
+I'll be adding more objects, I'm aiming for 100% test coverage so it may take a little time.
+
 ## List
 Return an array of all items in the object
 
