@@ -125,4 +125,8 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
 ```
 
 ## Develop
-In order to run the test you need to copy the `.env.example` rename it to `.env` and put your Zendesk URL, email and API token.
+1. For run the test you need to copy the `.env.example` rename it to `.env` and put your Zendesk URL, email and API token.
+3. Then you need to copy the `test/models.config.js.example` and rename it to `/test/models/config.js`
+2. Run the test for the first time with `npm test`.
+3. Some of the tests will fail and it is because you don't have the correct config set in the `config.js` file but this is neccesary for create a ticket and pick the IDs from there.
+3. Finally you need put your IDs into  `/test/models/config.js` and run the tests again.
