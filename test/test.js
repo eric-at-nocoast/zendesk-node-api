@@ -1,5 +1,9 @@
 var should = require('chai').should();
 var expect = require('chai').expect;
+var dotenv = require('dotenv');
+
+// First try to load the enviroment variables
+try { dotenv.load(); } catch(error) { console.error(error); }
 
 var Zendesk = require('../index.js');
 var zendesk = new Zendesk({

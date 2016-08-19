@@ -123,3 +123,6 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
   });
 
 ```
+
+## Develop
+In order to run the test you need to copy the `.env.example` rename it to `.env` and put your Zendesk URL, email and API token.
