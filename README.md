@@ -125,8 +125,30 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
 ```
 
 ## Develop
-1. For run the test you need to copy the `.env.example` rename it to `.env` and put your Zendesk URL, email and API token.
-3. Then you need to copy the `test/models.config.js.example` and rename it to `/test/models/config.js`
-2. Run the test for the first time with `npm test`.
-3. Some of the tests will fail and it is because you don't have the correct config set in the `config.js` file but this is neccesary for create a ticket and pick the IDs from there.
-3. Finally you need put your IDs into  `/test/models/config.js` and run the tests again.
+1. For run the tests you need to copy the `.env.example` and rename it to `.env` so put your Zendesk URL, email and API token there.
+2. Then you need to copy the `test/models/config.js.example` and rename it to `/test/models/config.js`
+3. Run the test for the first time with `npm test`.
+4. Some of the tests will fail and this is because you don't have the correct config set in the `config.js` file but the above step is necessary for create a ticket, and other stuff and pick the IDs from it.
+5. You need to pick the IDs that the `config.js` id required. For that I'm using [HTTPie](https://github.com/jkbrzt/httpie). Check the example below.
+6. Finally put your IDs into the `config.js` file and run the tests again.
+
+### Httpie example
+
+#### Get tickets
+```bash
+http GET https://earth.zendesk.com/api/v2/tickets.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
+```
+#### Get users
+```bash
+http GET https://earth.zendesk.com/api/v2/users.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
+```
+
+#### Get users fields
+```bash
+http GET https://earth.zendesk.com/api/v2/user_fields.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
+```
+
+#### Get macros
+```bash
+http GET https://earth.zendesk.com/api/v2/macros.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
+```
