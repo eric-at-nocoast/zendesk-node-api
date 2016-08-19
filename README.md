@@ -28,6 +28,7 @@ var zendesk = new Zendesk({
 - ```users```
 - ```userFields```
 - ```macros```
+- ```search``` - But just with the `.list(/* URL params */)` method.
 
 I'll be adding more objects, I'm aiming for 100% test coverage so it may take a little time.
 
@@ -130,6 +131,12 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
 
   zendesk.tickets.delete(TICKET_ID).then(function(result){
     // result == true
+  });
+
+  // List all tickets open tickets
+
+  zendesk.search.list('query=type:ticket status:open').then(function(results){
+    console.log(results);
   });
 
 ```
