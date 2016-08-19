@@ -4,10 +4,12 @@ var Accessor = function(config, single, plural){
   var zdrequest = require('./zdrequest.js')(config)
 
   return {
-    list: function(){
+    list: function(params){
       return new Promise(function(fufill, reject){
-        zdrequest.get('/' + plural + '.json').then(function(data){
-          fufill(data[plural])
+        var urlParams = params ? '?' + params : '';
+        zdrequest.get('/' + plural + '.json' + urlParams).then(function(data){
+          var key = plural === 'search' ? 'results' : plural
+          fufill(data[key])
         }).catch(function(err){
           reject(err)
         })

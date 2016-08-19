@@ -32,4 +32,8 @@ describe('Zendesk', function(){
   describe('macros', function(){
     require('./models/macros.js')(zendesk);
   });
+
+  describe('search', function(){
+    require('./models/search.js')(zendesk);
+  });
 });

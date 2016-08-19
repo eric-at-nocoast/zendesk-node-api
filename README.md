@@ -35,7 +35,10 @@ I'll be adding more objects, I'm aiming for 100% test coverage so it may take a 
 Return an array of all items in the object
 
 ``` javascript
-zendesk.objects.list().then(function(result){
+zendesk.objects.list(
+  // (Optional) URL params available for each object.
+  // https://developer.zendesk.com/rest_api/docs/core/
+).then(function(result){
     console.log(result);
 });
 ```
@@ -88,6 +91,13 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
   // List all tickets
 
   zendesk.tickets.list().then(function(tickets){
+    console.log(tickets);
+  });
+
+  // List all tickets and sort by status and order descendent
+  // https://developer.zendesk.com/rest_api/docs/core/tickets#list-tickets
+
+  zendesk.tickets.list('sort_by=status&sort_order=desc').then(function(tickets){
     console.log(tickets);
   });
 

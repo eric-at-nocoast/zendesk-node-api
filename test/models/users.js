@@ -14,6 +14,16 @@ module.exports = function(zendesk){
     });
   });
 
+  it('should get an admin user (Testing URL params)', function(done){
+    this.timeout(20000);
+    zendesk.users.list('role=admin').then(function(users){
+      expect(users).to.exist;
+      done();
+    }).catch(function(err){
+      done(err);
+    });
+  });
+
   it('should show a user by id', function(done){
     this.timeout(20000);
     zendesk.users.show(USER_ID).then(function(user){

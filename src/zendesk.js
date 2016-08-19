@@ -6,7 +6,8 @@ function Zendesk(config){
     users: require('./accessor.js')(config, 'user', 'users'),
     userFields: require('./accessor.js')(config, 'user_field', 'user_fields'),
 
-    macros: require('./accessor.js')(config, 'macro', 'macros')
+    macros: require('./accessor.js')(config, 'macro', 'macros'),
+    search: require('./accessor.js')(config, 'search', 'search')
   };
 }
 
