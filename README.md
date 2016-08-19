@@ -133,7 +133,7 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
     // result == true
   });
 
-  // List all tickets open tickets
+  // List all open tickets
 
   zendesk.search.list('query=type:ticket status:open').then(function(results){
     console.log(results);
