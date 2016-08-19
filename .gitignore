@@ -6,7 +6,6 @@
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -25,7 +24,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
 
 ### Node ###
 # Logs
@@ -68,3 +66,6 @@ jspm_packages
 
 # Enviroment file
 .env
+
+# Config file
+test/models/config.js
