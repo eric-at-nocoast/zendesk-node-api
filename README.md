@@ -28,7 +28,7 @@ var zendesk = new Zendesk({
 - ```users```
 - ```userFields```
 - ```macros```
-- ```search``` - But just with the `.list(/* URL params */)` method.
+- ```search``` - Only `.list(/* URL params */)` method.
 
 I'll be adding more objects, I'm aiming for 100% test coverage so it may take a little time.
 
@@ -142,30 +142,25 @@ zendesk.objects.delete(OBJECT_ID).then(function(result){
 ```
 
 ## Develop
-1. For run the tests you need to copy the `.env.example` and rename it to `.env` so put your Zendesk URL, email and API token there.
-2. Then you need to copy the `test/models/config.js.example` and rename it to `/test/models/config.js`
-3. Run the test for the first time with `npm test`.
-4. Some of the tests will fail and this is because you don't have the correct config set in the `config.js` file but the above step is necessary for create a ticket, and other stuff and pick the IDs from it.
-5. You need to pick the IDs that the `config.js` id required. For that I'm using [HTTPie](https://github.com/jkbrzt/httpie). Check the example below.
-6. Finally put your IDs into the `config.js` file and run the tests again.
 
-### Httpie example
+1. Rename `.env.example` to `.env` and add your Zendesk URL, email and API token.
+2. Rename `test/models/config.js.example` to `/test/models/config.js`.
+3. Run `npm test`, some of the tests will fail, don't worry about it for now.
+4. Update `/test/models/config.js` using IDs found from CURL. (see example below)
+5. Run `npm test`, if your configuration is set correctly, there should be no failing tests.
 
-#### Get tickets
-```bash
-http GET https://earth.zendesk.com/api/v2/tickets.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
-```
-#### Get users
-```bash
-http GET https://earth.zendesk.com/api/v2/users.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
-```
+### Using CURL to get configuration IDs
 
-#### Get users fields
 ```bash
-http GET https://earth.zendesk.com/api/v2/user_fields.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
-```
+# Tickets
+curl https://{subdomain}.zendesk.com/api/v2/tickets.json -v -u {email_address}:{password}
 
-#### Get macros
-```bash
-http GET https://earth.zendesk.com/api/v2/macros.json -a user@mars.com/token:2f96bd9d07464e6597f886f2ca70d35d
+# Users
+curl https://{subdomain}.zendesk.com/api/v2/users.json -v -u {email_address}:{password}
+
+# User fields
+curl https://{subdomain}.zendesk.com/api/v2/user_fields.json -v -u {email_address}:{password}
+
+# Macros
+curl https://{subdomain}.zendesk.com/api/v2/macros.json -v -u {email_address}:{password}
 ```
