@@ -1,4 +1,7 @@
 language: node_js
+before_script:
+- cp .env.example .env
+- cp test/models/config.js.example test/models/config.js
 node_js:
   - "6"
   - "5"
