@@ -1,6 +1,6 @@
 {
   "name": "zendesk-node-api",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "A wrapper library for Zendesk API using NodeJS",
   "author": "Adam Gray adam@adamgray.so",
   "main": "index.js",
