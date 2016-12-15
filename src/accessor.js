@@ -16,6 +16,17 @@ var Accessor = function(config, single, plural){
       })
     },
 
+    showMany: function(ids){
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/' + plural + '/show_many.json?ids='+ids ).then(function(data){
+          var key = plural === 'search' ? 'results' : plural
+          fufill(data[key])
+        }).catch(function(err){
+          reject(err)
+        })
+      })
+    },
+
     show: function(id){
       return new Promise(function(fufill, reject){
         zdrequest.get('/' + plural + '/' + id + '.json').then(function(data){
