@@ -29,9 +29,12 @@ var Zendesk = require('zendesk-node-api');
 
 var zendesk = new Zendesk({
   url: YOUR_ZENDESK_URL, // https://example.zendesk.com
-  oauth: YOUR_ZENDESK_OAUTH_TOKEN // hfkUny3vgHCcV3UfuqMFZWDrLKms4z3W2f6ftjPT
+  token: YOUR_ZENDESK_OAUTH_TOKEN // hfkUny3vgHCcV3UfuqMFZWDrLKms4z3W2f6ftjPT,
+  oauth: true
 });
 ```
+Please note that when using OAuth token you won't need an e-mail.
+
 According to the Zendesk documentation OAuth2 token will never expire, so no need to refresh it. 
 More information about it you can find (here)[https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application#topic_kcn_23s_qk].
 
