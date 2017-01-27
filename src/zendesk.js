@@ -1,4 +1,9 @@
 function Zendesk(config){
+  config.authorization = 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64');
+
+  if (config.oauth) {
+    config.authorization = 'Bearer ' + config.token;
+  }
   return {
     tickets: require('./accessor.js')(config, 'ticket', 'tickets'),
     ticketFields: require('./accessor.js')(config, 'ticket_field', 'ticket_fields'),

@@ -7,7 +7,7 @@ var ZDRequest = function(config){
       var options = {
         url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
-          Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
+          Authorization: config.authorization
         },
         forever: true
       }
@@ -24,7 +24,7 @@ var ZDRequest = function(config){
       var options = {
         url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
-          Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
+          Authorization: config.authorization
         },
         json: data
       }
@@ -40,7 +40,7 @@ var ZDRequest = function(config){
       var options = {
         url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
-          Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
+          Authorization: config.authorization
         },
         json: data
       }
@@ -57,7 +57,7 @@ var ZDRequest = function(config){
       var options = {
         url: config.url + '/api/' + API_VERSION + '/' + uri,
         headers: {
-          Authorization: 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64')
+          Authorization: config.authorization
         }
       }
 
