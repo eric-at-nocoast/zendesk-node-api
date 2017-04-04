@@ -48,6 +48,18 @@ var Accessor = function(config, single, plural){
         })
       })
     },
+    
+    createOrUpdate: function(data){
+      var createData = {}
+      createData[single] = data
+      return new Promise(function(fufill, reject){
+        zdrequest.post('/' + plural + '/create_or_update.json', createData).then(function(data){
+          fufill(data)
+        }).catch(function(err){
+          reject(err)
+        })
+      })
+    },
 
     update: function(id, data){
       var createData = {}
