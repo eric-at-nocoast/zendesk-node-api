@@ -8,6 +8,8 @@ function Zendesk(config){
     tickets: require('./accessor.js')(config, 'ticket', 'tickets'),
     ticketFields: require('./accessor.js')(config, 'ticket_field', 'ticket_fields'),
 
+    organizations: require('./accessor.js')(config, 'organization', 'organizations'),
+    
     users: require('./accessor.js')(config, 'user', 'users'),
     userFields: require('./accessor.js')(config, 'user_field', 'user_fields'),
 
