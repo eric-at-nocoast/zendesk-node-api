@@ -36,7 +36,7 @@ var zendesk = new Zendesk({
 Please note that when using OAuth token you won't need an e-mail.
 
 According to the Zendesk documentation OAuth2 token will never expire, so no need to refresh it. 
-More information about it you can find (here)[https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application#topic_kcn_23s_qk].
+More information about it you can find [here](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application#topic_kcn_23s_qk).
 
 ## Available objects
 - ```tickets```
