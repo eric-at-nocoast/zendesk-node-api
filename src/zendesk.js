@@ -1,4 +1,9 @@
 function Zendesk(config){
+
+  if (require("url").parse(config.url).hostname === null) {
+    console.error(`zendesk-node-api error: The provided url ${config.url} is invalid`);
+  }
+
   config.authorization = 'Basic ' + new Buffer(config.email + '/token:' + config.token).toString('base64');
 
   if (config.oauth) {
