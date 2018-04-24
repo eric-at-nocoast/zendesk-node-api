@@ -84,7 +84,25 @@ var Accessor = function(config, single, plural){
     }
   }
 
-  selectedMethods = methods;
+  if(single !== 'tag') {
+    selectedMethods = methods;
+  } else {
+    selectedMethods.list = methods.list;
+    selectedMethods.addTags = function(targetObjectPlural, id, data){
+      var createData = {}
+      createData[plural] = data;
+      return new Promise(function(fufill, reject){
+        zdrequest.put('/' + targetObjectPlural + '/' + id + '/' + plural + '.json', createData).then(function(data){
+          fufill(data)
+        }).catch(function(err){
+          reject(err)
+        })
+      })
+    }
+    selectedMethods.addTagsToTicket = selectedMethods.addTags.bind(selectedMethods.addTags, 'tickets')
+    selectedMethods.addTagsToOrganization = selectedMethods.addTags.bind(selectedMethods.addTags, 'organizations')
+    selectedMethods.addTagsToUser = selectedMethods.addTags.bind(selectedMethods.addTags, 'users')
+  }
 
   if(single === 'view') {
     selectedMethods.tickets = function(id, params){
