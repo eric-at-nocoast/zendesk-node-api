@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/dashedstripes/zendesk-node-api.svg?branch=master)](https://travis-ci.org/dashedstripes/zendesk-node-api)
 
+# This project is no longer being maintained. If you would like to take over ownership, send me an email, or create an issue.
+
 # Zendesk NodeJS API
 A wrapper library for Zendesk using NodeJS
 
