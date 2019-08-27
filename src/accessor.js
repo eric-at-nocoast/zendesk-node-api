@@ -2,8 +2,8 @@ var Promise = require('promise');
 
 var Accessor = function(config, single, plural){
   var zdrequest = require('./zdrequest.js')(config)
-
-  return {
+  var selectedMethods = {};
+  var methods = {
     list: function(params){
       return new Promise(function(fufill, reject){
         var urlParams = params ? '?' + params : '';
@@ -83,6 +83,41 @@ var Accessor = function(config, single, plural){
       })
     }
   }
+
+  if(single !== 'tag') {
+    selectedMethods = methods;
+  } else {
+    selectedMethods.list = methods.list;
+    selectedMethods.addTags = function(targetObjectPlural, id, data){
+      var createData = {}
+      createData[plural] = data;
+      return new Promise(function(fufill, reject){
+        zdrequest.put('/' + targetObjectPlural + '/' + id + '/' + plural + '.json', createData).then(function(data){
+          fufill(data)
+        }).catch(function(err){
+          reject(err)
+        })
+      })
+    }
+    selectedMethods.addTagsToTicket = selectedMethods.addTags.bind(selectedMethods.addTags, 'tickets')
+    selectedMethods.addTagsToOrganization = selectedMethods.addTags.bind(selectedMethods.addTags, 'organizations')
+    selectedMethods.addTagsToUser = selectedMethods.addTags.bind(selectedMethods.addTags, 'users')
+  }
+
+  if(single === 'view') {
+    selectedMethods.tickets = function(id, params){
+      return new Promise(function(fufill, reject){
+        var urlParams = params ? '?' + params : '';
+        zdrequest.get('/' + plural + '/' + id + '/tickets.json' + urlParams).then(function(data){
+          fufill(data.tickets)
+        }).catch(function(err){
+          reject(err)
+        })
+      })
+    }
+  }
+
+  return selectedMethods;
 }
 
 module.exports = Accessor
