@@ -10,12 +10,18 @@ var ZDRequest = function(config){
           Authorization: config.authorization
         },
         forever: true
-      }
+      };
 
       return new Promise(function(fufill, reject){
         request(options, function(err, res, body){
           if (err) { reject(err); }
-          fufill(JSON.parse(body));
+          var parsedBody;
+          try {
+            parsedBody = JSON.parse(body);
+          } catch (ex) {
+            reject(ex);
+          }
+          fufill(parsedBody);
         });
       })
     },
@@ -27,7 +33,7 @@ var ZDRequest = function(config){
           Authorization: config.authorization
         },
         json: data
-      }
+      };
       return new Promise(function(fufill, reject){
         request.post(options, function(err, res, body){
           if (err) { reject(err); }
@@ -43,7 +49,7 @@ var ZDRequest = function(config){
           Authorization: config.authorization
         },
         json: data
-      }
+      };
 
       return new Promise(function(fufill, reject){
         request.put(options, function(err, res, body){
@@ -59,7 +65,7 @@ var ZDRequest = function(config){
         headers: {
           Authorization: config.authorization
         }
-      }
+      };
 
       return new Promise(function(fufill, reject){
         request.delete(options, function(err, res, body){
@@ -69,6 +75,6 @@ var ZDRequest = function(config){
       })
     }
   }
-}
+};
 
-module.exports = ZDRequest
+module.exports = ZDRequest;
