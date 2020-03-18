@@ -81,6 +81,16 @@ var Accessor = function(config, single, plural){
           reject(err)
         })
       })
+    },
+
+    showComments: function(id){
+      return new Promise(function(fufill, reject){
+        zdrequest.get('/' + plural + '/' + id + '/comments.json').then(function(data){
+          fufill(data)
+        }).catch(function(err){
+          reject(err)
+        })
+      })
     }
   }
 }
