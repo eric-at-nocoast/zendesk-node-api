@@ -1,9 +1,0 @@
-var config = {
-  TICKET_ID: 833,
-  TICKET_FIELD_ID: 37179045,
-  USER_ID: 9135808069,
-  USER_FIELD_ID: 542389,
-  MACRO_ID: 108750269
-}
-
-module.exports = config;
